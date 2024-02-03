@@ -207,9 +207,9 @@ body {
 }
 
 #moving-text {
+  overflow-x: auto;
   white-space: nowrap;
-  display: inline-block;
-  overflow-x: scroll;
+  /* display: inline-block; */
 }
 
 #moving-text::-webkit-scrollbar {
@@ -221,7 +221,8 @@ body {
   display: inline-block;
   animation-name: move;
   animation-duration: 10s;
-  animation-timing-function: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #moving-text h1 {
@@ -232,10 +233,13 @@ body {
 #gola {
   height: 70px;
   width: 70px;
+  border-radius: 50%;
+  display: inline-block;
   background-color: #fe320a;
+  margin: 1vw 2vw;
 }
 
-@keyframes moves {
+@keyframes move {
   from {
     transform: translateX(0);
   }
@@ -245,11 +249,13 @@ body {
 }
 
 #page2-bottom {
-  height: 60vh;
+  height: 80vh;
   width: 100%;
   padding: 4.5vw;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 9;
   justify-content: space-between;
 }
 #page2-bottom h1 {
